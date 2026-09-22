@@ -1,0 +1,1 @@
+Drop hero-01.jpg hero-02.jpg hero-03.jpg hero-04.jpg here. Then set src in src/data/media.ts to /images/hero/hero-01.jpg etc.

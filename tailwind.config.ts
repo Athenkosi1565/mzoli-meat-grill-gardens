@@ -9,18 +9,18 @@ const config: Config = {
         cream: { DEFAULT: "#F4EDE3", 100: "#FAF6F0", 200: "#E8DCC8" },
         ember: { DEFAULT: "#C45C26", 600: "#A84A1C", 400: "#E07A3A" },
         gold: { DEFAULT: "#C9A227", 300: "#E0C056" },
-        earth: { DEFAULT: "#6B4F3A" }
+        earth: { DEFAULT: "#6B4F3A" },
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"]
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 18px 40px -20px rgba(26,20,16,0.45)"
-      }
-    }
+        card: "0 18px 40px -20px rgba(26,20,16,0.45)",
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
 
 export default config;
