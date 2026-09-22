@@ -1,0 +1,7 @@
+import type { VenueEvent } from "@/types";
+export const events: VenueEvent[] = [
+  { id: "ev-001", title: "Sunday Shisanyama Sessions", description: "Fire, platters and a long afternoon.", date: "2026-09-20", startTime: "12:00", endTime: "20:00", image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1200&q=80", category: "braai", location: "15 Barnet Street, Gardens", featured: true, published: true },
+  { id: "ev-002", title: "Deep House on the Square", description: "Evening sets with grilled platters.", date: "2026-09-26", startTime: "18:00", endTime: "23:00", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80", category: "music", location: "Mzoli Meat, Grill & Gardens", featured: true, published: true },
+  { id: "ev-003", title: "Community Braai Afternoon", description: "A slower Saturday for families.", date: "2026-10-04", startTime: "13:00", endTime: "18:00", image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=80", category: "community", location: "Gardens, Cape Town", featured: false, published: true },
+  { id: "ev-past-01", title: "Opening Weekend", description: "The Gardens chapter begins.", date: "2026-09-05", startTime: "11:00", endTime: "23:00", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80", category: "seasonal", location: "15 Barnet Street", featured: false, published: true },
+];
