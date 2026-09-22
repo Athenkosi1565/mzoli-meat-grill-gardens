@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #1a1410;
+  --cream: #f4ede3;
+  --ember: #c45c26;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--cream); }
+::selection { background: #c45c26; color: #faf6f0; }
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-semibold uppercase tracking-wide text-cream transition hover:bg-ember-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-cream/30 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-cream transition hover:border-cream hover:bg-cream/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+  }
+  .section-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold;
+  }
+  .input {
+    @apply w-full rounded-xl border border-cream/15 bg-charcoal px-4 py-3 text-cream placeholder:text-cream/30 focus:border-gold focus:outline-none;
+  }
+}

@@ -1,0 +1,51 @@
+export const site = {
+  name: "Mzoli Meat, Grill & Gardens",
+  shortName: "Mzoli's",
+  tagline: "MEAT. FIRE. MUSIC. COMMUNITY.",
+  heroHeadline: "THE TASTE OF MZOLI'S IS BACK",
+  description:
+    "Mzoli Meat, Grill & Gardens brings Cape Town’s legendary shisanyama culture to Gardens — fire-grilled meat, music and community at 15 Barnet Street.",
+  address: {
+    street: "15 Barnet Street",
+    suburb: "Gardens",
+    city: "Cape Town",
+    postalCode: "8001",
+    country: "South Africa",
+    full: "15 Barnet Street, Gardens, Cape Town, 8001, South Africa",
+  },
+  geo: { lat: -33.9306, lng: 18.4113 },
+  phone: "+27796288118",
+  phoneDisplay: "079 628 8118",
+  whatsapp: "27796288118",
+  whatsappDisplay: "+27 79 628 8118",
+  email: "Upliftingstar@gmail.com",
+  bookingsEmail: "Upliftingstar@gmail.com",
+  functionsEmail: "Upliftingstar@gmail.com",
+  logo: "/images/brand/mzoli-logo.jpg",
+  facebookVideo: "https://www.facebook.com/share/v/16BVz5BkgwA/?mibextid=wwXIfr",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=15+Barnet+Street+Gardens+Cape+Town+8001",
+  embedMapSrc: "https://maps.google.com/maps?q=15%20Barnet%20Street%20Gardens%20Cape%20Town%208001&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  hours: [
+    { days: "Monday – Thursday", hours: "11:00 – 22:00" },
+    { days: "Friday – Saturday", hours: "11:00 – 23:00" },
+    { days: "Sunday", hours: "11:00 – 21:00" },
+  ],
+  openingHoursSpec: ["Mo-Th 11:00-22:00", "Fr-Sa 11:00-23:00", "Su 11:00-21:00"],
+  social: {
+    instagram: "",
+    facebook: "https://www.facebook.com/p/Mzoli-Meat-Grill-Gardens-61593330583348/",
+    tiktok: "https://www.tiktok.com/@trendnation_sa",
+    youtube: "",
+  },
+  keywords: [
+    "Mzoli Meat Grill Gardens",
+    "Mzoli's Cape Town",
+    "Shisanyama Cape Town",
+    "Braai restaurant Cape Town",
+    "South African restaurant Gardens Cape Town",
+    "Meat restaurant Cape Town",
+    "Restaurants in Gardens Cape Town",
+  ],
+} as const;
+
+export type SiteConfig = typeof site;
