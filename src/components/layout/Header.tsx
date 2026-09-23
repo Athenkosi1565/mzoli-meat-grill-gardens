@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { site } from "@/data/site";
+import { BrandMark } from "@/components/layout/BrandMark";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -24,24 +23,22 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-cream/10 bg-charcoal/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 text-cream">
-          <Image src={site.logo} alt="" width={36} height={36} className="h-9 w-9 rounded-full object-cover" priority />
-          <span className="whitespace-nowrap font-display text-xl leading-none tracking-wide">Mzoli&apos;s</span>
+          <BrandMark className="h-9 w-9" />
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-xl tracking-wide">Mzoli&apos;s</span>
+            <span className="mt-0.5 hidden text-[9px] font-semibold uppercase tracking-[0.22em] text-gold sm:block">Meat · Grill · Gardens</span>
+          </span>
         </Link>
-
         <nav className="hidden items-center gap-5 xl:gap-7 lg:flex" aria-label="Primary">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.14em] text-cream/80 hover:text-gold">
-              {l.label}
-            </Link>
+            <Link key={l.href} href={l.href} className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.14em] text-cream/80 hover:text-gold">{l.label}</Link>
           ))}
           <Link href="/book" className="btn-primary !px-5 !py-2 text-[11px]">Book a table</Link>
         </nav>
-
         <button type="button" className="rounded-md p-2 text-cream lg:hidden" aria-expanded={open} aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen((v) => !v)}>
           {open ? <X /> : <Menu />}
         </button>
       </div>
-
       <div className={cn("lg:hidden", open ? "block" : "hidden")}>
         <nav className="flex flex-col gap-3 px-4 pb-6" aria-label="Mobile">
           {links.map((l) => (

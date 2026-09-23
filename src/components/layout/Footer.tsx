@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/data/site";
+import { BrandMark } from "@/components/layout/BrandMark";
 import { SocialLinks } from "@/components/layout/SocialLinks";
 
 export function Footer() {
@@ -8,25 +9,30 @@ export function Footer() {
       <div className="container-page grid gap-10 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <img src={site.logo} alt="" className="h-12 w-12 rounded-full object-cover" />
+            <BrandMark className="h-12 w-12" />
             <p className="font-display text-2xl leading-tight">{site.name}</p>
           </div>
           <p className="mt-3 max-w-sm text-sm text-cream/70">{site.tagline}</p>
           <p className="mt-3 text-sm text-cream/70">
-            <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a><br />
+            <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a>
+            <br />
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </p>
         </div>
         <div>
           <p className="section-kicker">Visit</p>
           <p className="mt-3 text-sm leading-relaxed text-cream/80">
-            {site.address.street}<br />{site.address.suburb}, {site.address.city}<br />{site.address.postalCode}, {site.address.country}
+            {site.address.street}<br />
+            {site.address.suburb}, {site.address.city}<br />
+            {site.address.postalCode}, {site.address.country}
           </p>
         </div>
         <div>
           <p className="section-kicker">Hours</p>
           <ul className="mt-3 space-y-1 text-sm text-cream/80">
-            {site.hours.map((h) => (<li key={h.days}>{h.days}: {h.hours}</li>))}
+            {site.hours.map((h) => (
+              <li key={h.days}>{h.days}: {h.hours}</li>
+            ))}
           </ul>
         </div>
       </div>
