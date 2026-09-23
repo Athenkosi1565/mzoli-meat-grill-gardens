@@ -1,0 +1,40 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Production build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://mzoli-meat.netlify.app
+          NOTIFY_EMAIL: Upliftingstar@gmail.com
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "Add GitHub secrets NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID to finish deploy."
+            echo "Site ID: 8737dd00-5c4b-48b5-9d77-6dcb72b749c1"
+            exit 1
+          fi
+          npx --yes netlify-cli deploy --build --prod --dir=.next
